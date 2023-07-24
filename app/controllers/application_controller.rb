@@ -15,7 +15,7 @@ class ApplicationController < ActionController::API
 
   private
 
-  def render_unprocessable_entity(invalid)
-    render json: { errors: invalid.records.errors.full_messages }, status: :unprocessable_entity
+  def render_unprocessable_entity(exception)
+    render json: { errors: exception.record.errors.full_messages }, status: :unprocessable_entity
   end
 end
